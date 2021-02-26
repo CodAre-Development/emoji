@@ -1,0 +1,274 @@
+<div><main class="entity-content__description"><div class="content"><script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script>
+  document.querySelector('head > link[rel="icon"]').setAttribute('href', 'https://emojibot.xyz/assets/img/fav.png')
+    
+[...document.querySelectorAll(".entity-owner__avatar > div > img")].forEach(a => a.style.borderRadius = "9999px")    
+    
+    
+document.querySelector("body > div.entity-wrapper > article > section.entity-content__section.entity-sidebar > div.entity-sidebar__overflow").innerHTML += `
+<a target="_blank" onclick="trackCampaignWebClick('', 'description');" rel="nofollow" class="premium__link" href="https://patreon.com/emojidiscord">Buy Premium</a>`
+    document.querySelectorAll("a").forEach(el => el.removeAttribute("rel"))
+</script>
+<script>
+fetch("https://api.emojibot.xyz/commands").then(res => res.json()).then(data => {
+ 	data.bilgi.forEach(command => {
+  document.querySelector("table > #information").innerHTML += `<tr><td>--${command.name}</td><td>${command.description}</td></tr>`
+  })
+  
+ data.emoji.forEach(command => {
+  document.querySelector("table > #emoji").innerHTML += `<tr><td>--${command.name}</td><td>${command.description}</td></tr>`
+  })
+  
+ data.mod.forEach(command => {
+  document.querySelector("table > #moderation").innerHTML += `<tr><td>--${command.name}</td><td>${command.description}</td></tr>`
+  })
+  
+ data.premium.forEach(command => {
+  document.querySelector("table > #premium").innerHTML += `<tr><td>--${command.name}</td><td>${command.description}</td></tr>`
+  })
+  
+  document.querySelectorAll("table > tbody").forEach(el => el.innerHTML += "<tr></tr>")
+  $("#commands").show()
+ })
+</script>
+<div class="main-block">
+  <a target="_blank" onclick="trackCampaignWebClick('', 'description');" rel="nofollow" href="https://emojibot.xyz">
+    <img src="https://cdn.discordapp.com/attachments/730414657478721607/733409659612037232/emoji.png" draggable="false" id="banner-img">
+  </a>
+  <h1 style="color: var(--light-blue-200); font-weight: bolder; letter-spacing: 0.05em">Emoji Bot</h1>
+  <p>• Find new emojis using my random command, search for specific ones using find, upload them and enjoy! •</p>
+  <p>• Type "--help" in your server to see my commands and more. •</p>
+  <p>• You can add me to your server by clicking <a target="_blank" onclick="trackCampaignWebClick('', 'description');" rel="nofollow" href="https://emojibot.xyz/invite">here</a> to add me to your server. •</p>
+  <p>• If you run into any issues while using Emoji, reach out to us on our <a target="_blank" onclick="trackCampaignWebClick('', 'description');" rel="nofollow" href="https://discord.gg/U5v2csS">support server</a>, we'd love to help you! •</p>
+</div>
+<br>
+<div id="commands" align="center" style="">
+<h1 align="center" style="color:#f36060">Command List</h1>
+<h3>Information Commands</h3>
+<table>
+  <thead>
+    <tr><th>Command Name</th>
+    <th>Description</th>
+  </tr></thead>
+  <tbody id="information">
+  <tr><td>--help</td><td>Shows an embed of the command list.</td></tr><tr><td>--invite</td><td>Shows a message of the bot's invite links.</td></tr><tr><td>--stats</td><td>Shows an embed of the bot's stats, like ram usage and server size.</td></tr><tr></tr></tbody>
+</table>
+<h3>Emoji Commands</h3>
+<table>
+  <thead>
+    <tr><th>Command Name</th>
+    <th>Description</th>
+  </tr></thead>
+  <tbody id="emoji">
+  <tr><td>--emojify</td><td>Emojifys the message you typed. Like: 🇭🇪🇱🇱🇴</td></tr><tr><td>--find</td><td>You can find emojis from the bot's emojis with a name.</td></tr><tr><td>--get</td><td>Gets emojis and links from a message.</td></tr><tr><td>--info</td><td>You can get information about an emoji that is from this server.</td></tr><tr><td>--jumbo</td><td>You can get the image version of any emoji with sending it or typing it's name.</td></tr><tr><td>--link</td><td>You can get the link of an emoji with it's name or sending it. Pretty useful for mobile users.</td></tr><tr><td>--list</td><td>Shows the emojis of your server with an embed message.</td></tr><tr><td>--random</td><td>You can find multiple random emojis from the bot, can also find animated or static emojis.</td></tr><tr><td>--react</td><td>You can make the bot react with an emoji that is in this server to the last message. (Only works with custom emojis, obviously.)</td></tr><tr><td>--send</td><td>You can make the bot send an emoji that is in this server with typing it's name.</td></tr><tr></tr></tbody>
+</table>
+<h3>Moderation Commands</h3>
+<table>
+  <thead>
+    <tr><th>Command Name</th>
+    <th>Description</th>
+  </tr></thead>
+  <tbody id="moderation">
+  <tr><td>--delete</td><td>You can delete emojis using their name or sending them directly.</td></tr><tr><td>--fast-upload</td><td>You can upload emojis fastly without giving them a name. To use this, send an emoji file with the command, send an emoji link or send the emoji itself.</td></tr><tr><td>--prefix</td><td>You can change the symbols (prefix) for the commands. (Uppercase prefixes / prefixes with spaces are not supported!)</td></tr><tr><td>--rename</td><td>You can change the name of an emoji with sending it or typing it's name.</td></tr><tr><td>--role</td><td>You can limit an emoji to a certain role's users only with this command. To make the emoji usable by everyone again, type `everyone` or `remove` instead of a role name.</td></tr><tr><td>--upload</td><td>Creates a new emoji for your server with the file you provided.</td></tr><tr></tr></tbody>
+</table>
+<h3>Premium Commands</h3>
+<table>
+  <thead>
+    <tr><th>Command Name</th>
+    <th>Description</th>
+  </tr></thead>
+  <tbody id="premium">
+  <tr><td>--hide</td><td>Hides the emojis from the bot to be found on another servers.</td></tr><tr><td>--pack</td><td>Packs the emojis to a zip file.</td></tr><tr></tr></tbody>
+</table>
+</div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  
+a, p {
+	font-family: Poppins, sans-serif !important;
+}  
+  
+::-webkit-scrollbar {
+    background-color: #202324;
+    color: #aba499;
+  	width: 13px
+}
+::-webkit-scrollbar-corner {
+    background-color: #181a1b;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #454a4d;
+} 
+
+.server-preview h2 {
+	text-align: center;
+}
+
+.entity-sidebar .related-entity {
+	margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+code {
+    font-size: 12px !important;
+    border: 0px !important;
+	background: transparent !important;
+}
+.columns img[alt="Avatar for Emoji"] {
+  border-radius: 9999px !important;
+  overflow: visible !important;
+  box-shadow: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+img[alt="Avatar for Emoji"] {
+  border: 5px solid white;
+  background-color: transparent;
+}
+img[alt="Avatar for Emoji"] {
+  -webkit-animation: mover 1.5s infinite  alternate; 
+  animation: mover 1.5s infinite  alternate;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  border-radius: 50%
+}
+img[alt="Avatar for Emoji"] {
+  -webkit-animation: mover 1.5s infinite  alternate; 
+  animation: mover 1.5s infinite  alternate;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+img[alt="Avatar for Emoji"] {
+  border-radius: 9999px !important;
+  overflow: visible !important;
+  box-shadow: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+#bot-details-page #details .container {
+  border-bottom: 1px solid #ccd6f800;
+  border-top: 1px solid #00000000;
+  padding: 40px 0;
+}
+
+img[alt="Avatar for Emoji"] {
+     -webkit-animation: mover 1.5s infinite  alternate; 
+     animation: mover 1.5s infinite  alternate;
+     -webkit-animation-timing-function: ease-in-out;
+     animation-timing-function: ease-in-out;
+     -webkit-animation-iteration-count: infinite;
+     animation-iteration-count: infinite;
+     border-radius: 9999px
+}
+img[alt="Avatar for Emoji"] {
+     -webkit-animation: mover 1.5s infinite  alternate; 
+     animation: mover 1.5s infinite  alternate;
+     -webkit-animation-timing-function: ease-in-out;
+     animation-timing-function: ease-in-out;
+     -webkit-animation-iteration-count: infinite;
+     animation-iteration-count: infinite;
+}
+     @-webkit-keyframes mover {
+     0% { transform: translateY(0); }
+     100% { transform: translateY(-20px); }
+}    
+@keyframes mover {
+     0% { transform: translateY(0); }
+     100% { transform: translateY(-20px); }
+}
+
+body > div.entity-wrapper > article > section.entity-content__section.entity-sidebar > div.entity-sidebar__overflow {
+	margin-right: auto !important;
+    margin-left: auto !important
+}
+
+.entity-header__button {
+	border-radius: 9999px
+}
+
+.entity-button {
+	border-radius: 9999px
+}
+
+.entity-table__cell:nth-child(even) {
+	border-radius: 0px 9999px 9999px 0px
+}
+
+.entity-table__cell:nth-child(odd) {
+	border-radius: 9999px 0px 0px 9999px
+}
+
+.entity-sidebar .entity-owner {
+	border-radius: 9999px
+}
+
+.dUMQab {
+	border-radius: 9999px !important;
+}
+
+.entity-table > * {
+	margin-top: 5px
+}
+
+.entity-sidebar .entity-tag {
+	border-radius: 9999px
+}
+
+.premium__link {
+	color: #FFA500
+}
+
+.premium__link:hover {
+	color: #FFD700
+}
+
+.site-nav {
+	background-color: #7289DA !important;
+}
+
+.main-block {
+	text-align: center; 
+    background-color: var(--indigo-600); 
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--indigo-400)
+}
+
+#commands {
+    background-color: var(--gray-700); 
+    width: fit-content;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--gray-400)
+}
+
+table, th, td {
+  border: 3px dashed var(--gray-900) !important;
+}
+.content table th:not([align]) {
+	text-align: center
+}
+
+.entity-content__description {
+	background: transparent !important;
+	border: 0px !important
+}
+
+th:nth-child(1) {
+	width: 20%
+}
+</style></div></main><div style="margin-top:16px"><div data-id="5b608e9746e0fb0001318a60" height="90" aria-label="advertisement" class="styles__StyledDiv-sc-1qvyf7s-0 bqAvgD vm-placement ad-placement"></div></div></div>
