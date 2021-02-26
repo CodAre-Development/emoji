@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-
+// ayarlanılan prefixin gözükmesini istediğiniz yere koyun: ${require('quick.db').fetch(`prefix.${message.guild.id}`) || client.ayarlar.prefix}
 exports.run = async (client, message, args) => {
 
 if(!message.member.hasPermission('MANAGE_EMOJIS')) return;
