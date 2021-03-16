@@ -33,6 +33,7 @@ return permlvl;
 };
 
 client.config = require('./structures/config.js');
+/* TOKEN VE PREFİX ŞEYLERİNİ CONFİG.JS'DEN AYARLAYACAKSINIZ */
 client.login(client.config.token);
 
 client.on('ready', async () => {
