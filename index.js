@@ -53,3 +53,7 @@ client.users.cache.forEach(x => {
 
 return console.log(`${client.user.tag} ismi ile giriş yaptım.`);
 });
+
+/*
+Herhangi bir sorunda discord.gg/codare yada can#0002
+*/
